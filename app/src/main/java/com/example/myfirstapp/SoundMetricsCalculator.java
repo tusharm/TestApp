@@ -3,8 +3,13 @@ package com.example.myfirstapp;
 import android.view.View;
 import android.widget.EditText;
 
+import java.math.BigDecimal;
+import java.util.Locale;
+
 import static java.lang.Double.parseDouble;
+import static java.lang.String.format;
 import static java.lang.String.valueOf;
+import static java.util.Locale.getDefault;
 
 class SoundMetricsCalculator implements View.OnFocusChangeListener {
     private final EditText distanceView;
@@ -32,8 +37,8 @@ class SoundMetricsCalculator implements View.OnFocusChangeListener {
             double velocity = computeSoundVelocity(temperature);
             double time = computeSoundTravelTime(velocity, distance);
 
-            velocityView.setText(valueOf(velocity));
-            timeView.setText(valueOf(time));
+            velocityView.setText(format(getDefault(), "%.2f", velocity));
+            timeView.setText(format(getDefault(), "%.2f", time));
         }
     }
 

@@ -18,17 +18,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText distanceView = (EditText) findViewById(R.id.distanceText);
-        distanceView.setText("0.0");
-
-        EditText tempView = (EditText) findViewById(R.id.tempText);
-        tempView.setText("0.0");
+        final EditText distanceView = (EditText) findViewById(R.id.distanceText);
+        final EditText tempView = (EditText) findViewById(R.id.tempText);
 
         final EditText velocityView = (EditText) findViewById(R.id.soundVelocityText);
-        velocityView.setText("0.0");
+        velocityView.setFocusable(false);
 
         final EditText timeView = (EditText) findViewById(R.id.timeText);
-        timeView.setText("0.0");
+        timeView.setFocusable(false);
 
         SoundMetricsCalculator calculator =
                 new SoundMetricsCalculator(distanceView, tempView, velocityView, timeView);
