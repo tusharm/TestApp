@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double mean = (firstTimer.getInterval() + secondTimer.getInterval()) / 2.0;
-                double difference = mean - parseDouble(timeView.getText().toString());
-                double correction = difference * parseDouble(velocityView.getText().toString());
+                double mean = roundToOneDecimal((firstTimer.getInterval() + secondTimer.getInterval()) / 2.0);
+                double difference = roundToOneDecimal(mean - parseDouble(timeView.getText().toString()));
+                double correction = roundToOneDecimal(difference * parseDouble(velocityView.getText().toString()));
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setMessage(String.valueOf(correction));
@@ -57,4 +57,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private double roundToOneDecimal(double num) {
+        return Math.round(num * 10) / 10.0;
+    }
 }

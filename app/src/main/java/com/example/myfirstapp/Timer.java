@@ -5,7 +5,7 @@ import android.widget.Chronometer;
 import android.widget.CompoundButton;
 
 class Timer implements CompoundButton.OnCheckedChangeListener {
-    private long interval;
+    private double interval;
     private final Chronometer chronometer;
 
     Timer(Chronometer chronometer) {
@@ -23,7 +23,7 @@ class Timer implements CompoundButton.OnCheckedChangeListener {
         }
     }
 
-    public long getInterval() {
+    public double getInterval() {
         return interval;
     }
 }
