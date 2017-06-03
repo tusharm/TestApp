@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">Test App</string>
-    <string name="distance_text_hint">Distance (mts)</string>
-    <string name="temp_text_hint">Temperature (C)</string>
+    <string name="distance_text_hint">OT DIST (mts)</string>
+    <string name="temp_text_hint">TEMP (C)</string>
     <string name="timer_start">Start</string>
     <string name="timer_stop">Stop</string>
-    <string name="submit_button">Go</string>
-    <string name="velocity_text_hint">Perceived sound velocity (m/s)</string>
-    <string name="time_text_hint">Sound travel time (sec)</string>
+    <string name="submit_button">RG OBSN</string>
+    <string name="velocity_text_hint">PREVAILING VEL (m/s)</string>
+    <string name="time_text_hint">PREDICTED TIME (sec)</string>
 </resources>
