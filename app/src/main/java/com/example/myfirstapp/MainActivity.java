@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ToggleButton;
 
 import static java.lang.Double.parseDouble;
+import static java.lang.String.format;
 import static java.lang.String.valueOf;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,12 +49,14 @@ public class MainActivity extends AppCompatActivity {
                 velocityView.setText(valueOf(velocity));
                 timeView.setText(valueOf(time));
 
-                double mean = roundToOneDecimal((firstTimer.getInterval() + secondTimer.getInterval()) / 2.0);
+                double firstTimerInterval = firstTimer.getInterval();
+                double secondTimerInterval = secondTimer.getInterval();
+                double mean = roundToOneDecimal((firstTimerInterval + secondTimerInterval) / 2.0);
                 double difference = roundToOneDecimal(mean - parseDouble(timeView.getText().toString()));
                 double correction = roundToOneDecimal(difference * parseDouble(velocityView.getText().toString()));
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage(valueOf(correction));
+                builder.setMessage(format("Timer 1: %s secs\nTimer 2: %s secs\nResult: %s", valueOf(firstTimerInterval), valueOf(secondTimerInterval), valueOf(correction)));
                 builder.setCancelable(true);
                 AlertDialog dialog = builder.create();
                 dialog.show();

@@ -19,7 +19,7 @@ class Timer implements CompoundButton.OnCheckedChangeListener {
             chronometer.start();
         } else {
             chronometer.stop();
-            interval = (SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000;
+            interval = (SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000.0;
         }
     }
 
